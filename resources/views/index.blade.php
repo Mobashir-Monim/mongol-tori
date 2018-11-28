@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="/frontend/css/bootstrap.min.css.map">
 
     <link rel="stylesheet" type="text/css" href="/frontend/css/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <link rel="shortcut icon" type="image/png" href="/frontend/Assets/04 Logo/MONGOL TORI LOGO FINAL.png"/>
 
@@ -40,17 +41,30 @@
         <div class="container-fluid" id="logo-container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <img src="/frontend/Assets/04 Logo/MONGOL TORI LOGO FINAL.png" id="">
+                    <img src="/frontend/Assets/04 Logo/MONGOL TORI LOGO FINAL.png" class="img-fluid" id="">
                 </div>
             </div>
         </div>
-
-        <nav class="navbar-nav navbar-expand-lg navbar-light bg-transparent text-center">
-            <a href="#about-us" class="navbar-brand">About</a>
-            <a href="#work" class="navbar-brand">Work</a>
-            <a href="#team" class="navbar-brand">Team</a>
-            <a href="#sponsors" class="navbar-brand">Sponsors</a>
-            <a href="#contact" class="navbar-brand">Contact Us</a>
+        <nav class="navbar-nav navbar-expand-lg navbar-light bg-transparent text-center pos-absolute">
+            <div class="collapse navbar-collapse text-center w-100" id="navbarNav">
+                <ul class="nav-bar">
+                    <li class="item-nav active">
+                        <a href="#about-us" class="navbar-brand">About</a>
+                    </li>
+                    <li class="item-nav">
+                        <a href="#work" class="navbar-brand">Work</a>
+                    </li>
+                    <li class="item-nav">
+                        <a href="#team" class="navbar-brand">Team</a>
+                    </li>
+                    <li class="item-nav">
+                        <a href="#sponsors" class="navbar-brand">Sponsors</a>
+                    </li>
+                    <li class="item-nav">
+                        <a href="#contact" class="navbar-brand">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
 
         <div class="container-fluid">
@@ -61,7 +75,7 @@
             </div>
         </div>       
     </section> <!-- intro -->
-            
+    <br><br><br>
     <section class="about-us section" id="about-us">
         <div class="container">
             <h1 style="left: 12%; position: relative;"><strong>About Us</strong></h1>
@@ -72,7 +86,7 @@
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-5">
-                    <img src="/frontend/img/mars logo.png" align="right">
+                    <img src="/frontend/img/mars logo.png" class="img-fluid" align="right">
                 </div>
             </div> <!--row -->
             <br><br>
@@ -85,8 +99,8 @@
     </section> <!-- about-us -->
                 
     <section class="our-works" id="work">
-
         <div class="container-fluid">
+            <br><br>
             <div class="row">
                 <h1 style="font-size: 3vw; color: #fff; left: 20%; position: relative;"><strong>Our Works</strong></h1>
             </div> <!-- row -->
@@ -102,25 +116,25 @@
                 </div>
             </div>
         </div>
-
+        <br>
         <div class="container">
             <div class="row">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
-                            <img class="d-block w-50" src="/frontend/img/interceptor.jpg" alt="Interceptor" width="450px" height="400px">
+                            <img class="d-block w-50" src="/frontend/img/interceptor.jpg" class="img-fluid" alt="Interceptor" width="450px" height="400px">
                             <div class="carousel-caption">
                                 <h5 align="center">Interceptor<br>(Battlebot) 2016</h5>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-50" src="/frontend/img/PathFinder.jpg" alt="Pathfinder" width="450px" height="400px">
+                            <img class="d-block w-50" src="/frontend/img/PathFinder.jpg" class="img-fluid" alt="Pathfinder" width="450px" height="400px">
                             <div class="carousel-caption">
                                 <h5 align="center">Pathfinder<br>(Follower) 2015</h5>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-50" src="/frontend/img/MT.jpg" alt="Mongol Tori" width="450px" height="400px">
+                            <img class="d-block w-50" src="/frontend/img/MT.jpg" alt="Mongol Tori" class="img-fluid" width="450px" height="400px">
                             <div class="carousel-caption">
                                 <h5 align="center">Mongol Tori<br>(Boat of Mars) 2017</h5>
                             </div>
@@ -150,7 +164,7 @@
                 <div class="col-md-4">
                     <div class="member-1">
                         <div class="avatar">
-                            <span><img src="/frontend/img/Dr. Md. Khalilur Rhaman.jpg" alt="avatar"></span>
+                            <span><img src="/frontend/img/Dr. Md. Khalilur Rhaman.jpg" class="img-fluid" alt="avatar"></span>
                         </div>
                             <div class="desc">
                             <h5 class="text-dark">Dr. Md. Khalilur Rahman</h5>
@@ -162,7 +176,7 @@
                 <div class="col-md-4">
                     <div class="member-2">
                         <div class="avatar">
-                            <span><img src="/frontend/img/Md. Saiful Islam.jpg" alt="avatar"></span>
+                            <span><img src="/frontend/img/Md. Saiful Islam.jpg" class="img-fluid" alt="avatar"></span>
                         </div>
                         <div class="desc">
                             <h5 class="text-dark">Md. Saiful Islam</h5>
@@ -174,7 +188,7 @@
                 <div class="col-md-4">
                     <div class="member-3">
                         <div class="avatar">
-                            <span><img src="/frontend/img/Abdullah.jpg" alt="avatar"></span>
+                            <span><img src="/frontend/img/Abdullah.jpg" class="img-fluid" alt="avatar"></span>
                         </div>
                         <div class="desc">
                             <h5 class="text-dark">Abdullah</h5>
@@ -184,14 +198,42 @@
                 </div>        
             </div>
             <br><br>
-            <div class="row ">
-                <div class="col-md-12 text-center">
-                    <button type="submit" id="teamButton"><strong>View Full Team</strong></button>
+            <div class="row">
+                <script>
+                    function showTeam() {
+                        document.getElementById('team-full').style.display = 'block';
+                        document.getElementById('show-team').style.display = 'none';
+                        document.getElementById('hide-button').style.display = 'block';
+                    }
+                </script>
+                <script>
+                    function hideTeam() {
+                        document.getElementById('team-full').style.display = 'none';
+                        document.getElementById('show-team').style.display = 'block';
+                        document.getElementById('hide-button').style.display = 'none';
+                    }
+                </script>
+                <div class="col-md-12 text-center" id="show-team">
+                    <button onclick="showTeam()" id="teamButton"><strong>View Full Team</strong></button>
                 </div>
             </div>
         </div>
+
+        <div class="container-fluid" id="team-full">
+            @for ($i = 0; $i < 10; $i++)
+                <div class="row">
+                    <div class="col-md-12">
+                        here{{$i}}
+                    </div>
+                </div>
+            @endfor
+        </div>
+
+        <div class="col-md-12 text-center" id="hide-button">
+            <button onclick="hideTeam()" id="teamButton"><strong>Hide Full Team</strong></button>
+        </div>
     </section> <!-- team -->
-            
+    <br><br>
     <section class="sponsor" id="sponsors">
         <div class="container-fluid">
             <div class="row">
@@ -203,22 +245,21 @@
 
         <div class="container">
             <div class="row">
-                <img src="/frontend/img/bracu.png" style="height: 130px; width: 150px; position: relative; left: 43%; top: 10px;" align="center">
+                <img src="/frontend/img/bracu.png" class="img-fluid" style="height: 130px; width: 150px; position: relative; left: 43%; top: 10px;" align="center">
             </div>
 
-            <div class="row">  
-                <img src="/frontend/img/bracbank.jpg" class="first-line-image">
-                <img src="/frontend/img/square.png" class="first-line-image">
-                <img src="/frontend/img/grameenintel.jpg" class="first-line-image">
-                <img src="/frontend/img/prothomalo.png" class="first-line-image">
-            </div>
-
-            <div class="row">
-                <img src="/frontend/img/cytron.png" class="second-line-image">
-                <img src="/frontend/img/eximbank.png" class="second-line-image">
-                <img src="/frontend/img/fsib.jpg" class="second-line-image" style="width: 115px;">
-                <img src="/frontend/img/robu.png" class="second-line-image" style="width: 115px;">
-                <img src="/frontend/img/naster.png" class="second-line-image">
+            <div class="row ">  
+                <div class="col-md-12 text-center">
+                    <img src="/frontend/img/bracbank.jpg" class="sponsors img-fluid">
+                    <img src="/frontend/img/square.png" class="sponsors img-fluid">
+                    <img src="/frontend/img/grameenintel.jpg" class="sponsors img-fluid">
+                    <img src="/frontend/img/prothomalo.png" class="sponsors img-fluid">
+                    <img src="/frontend/img/cytron.png" class="sponsors img-fluid">
+                    <img src="/frontend/img/eximbank.png" class="sponsors img-fluid">
+                    <img src="/frontend/img/fsib.jpg" class="sponsors img-fluid">
+                    <img src="/frontend/img/robu.png" class="sponsors img-fluid">
+                    <img src="/frontend/img/naster.png" class="sponsors img-fluid">
+                </div>
             </div>
         </div>
     </section> <!-- sponsor -->
@@ -246,12 +287,10 @@
 
             <div class="text-center pt-4">
                 <h4 style="padding-top: 30px; font-size: 20px; color: #fff"><strong>Connect Us With</strong></h4>
-            </div>
-            <div class="social-icon text-center">
-                <span><i class="fab fa-facebook-f"></i></span>
-                <span><i class="fab fa-twitter"></i></span>
-                <span><i class="fab fa-linkedin"></i></span>
-                <span><i class="fab fa-google-plus"></i></span>
+                <span class="social-icon"><i class="fa fab fa-facebook-f x5"></i></span>
+                <span class="social-icon"><i class="fa fab fa-twitter"></i></span>
+                <span class="social-icon"><i class="fa fab fa-linkedin"></i></span>
+                <span class="social-icon"><i class="fa fab fa-google-plus"></i></span>
             </div>
         </div>
     </section> <!--contact us-->
@@ -263,7 +302,7 @@
                     <p>&copy;Copyright BRACU Mongol-Tori 2017-18 | Privacy Policy | Terms of Use</p>
                 </div>
                 <div class="col-md-4">
-                    <p>Made with <i class="fas fa-heart"></i></p>
+                    <p>Made with <i class="fa fas fa-heart"></i></p>
                 </div>
             </div>
         </div>
@@ -271,8 +310,8 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    {{-- <script src="/frontend/https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="/frontend/https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="/frontend/https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> --}}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>

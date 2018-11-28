@@ -70,8 +70,8 @@
 
 .our-works{
 	background-image: url(../img/14336.jpg);
+	height: 100vh;
 	margin-top: 100px;
-	padding-top: 80px;
 }
 
 .carousel-inner > .carousel-item > img{
@@ -95,23 +95,12 @@
 }
 
 
-.first-line-image{
+.sponsors {
 	position: relative;
-	float: left;
-	padding: 15px;
+	margin: 2%;
 	margin-top: 15px;
-	height: 100px;
-	width: 200px;
-	left: 15%;
-}
-.second-line-image{
-	position: relative;
-	float: left;
-	padding: 15px;
-	margin-top: 15px;
-	height: 100px;
-	width: 200px;
-	left: 13%;
+	max-width: 12vw;
+	max-height: 6vw;
 }
 
 .contact-us{
@@ -188,4 +177,35 @@
 
 body {
 	font-family: 'Chakra Petch','Montserrat';
+}
+
+.font-black {
+	color: #000;
+}
+
+.nav-bar {
+	width: 100%;
+	list-style: none;
+	text-align: center;
+}
+
+.item-nav {
+	display: inline;
+	text-align: center;
+}
+
+.pos-absolute {
+	position: absolute;
+	top: 23%;
+	padding:0;
+	margin: 0;
+	width: 100%;
+}
+
+#team-full {
+	display: none;
+}
+
+#hide-button {
+	display: none;
 }
