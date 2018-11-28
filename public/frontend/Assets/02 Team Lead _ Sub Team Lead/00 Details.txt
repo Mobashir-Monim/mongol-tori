@@ -1,0 +1,27 @@
+
+01	Mohammad Zahirul Islam	>	President
+
+02	Ali Ahsan		>	Vice President
+
+03	Razin Bin Issa		>	Team Lead
+					Control & Software Team Lead
+
+04	Zareef Jafar		>	Design Team Lead
+
+05	Sayantan Ark		>	Mechanical Team Lead
+
+06	Mahbub Sifat		>	Electronics Team Lead
+
+07	Md Ragib Aunjum		>	Communication Team Lead
+
+08	K M Fahim Mahmud	>	Science Team Lead
+
+09	Soyeb Ahmed		>	Finance & Management Team Lead
+
+10	Zzber Mohammad		>	Research & Writing Team Lead
+
+11	Gazi Musa Al Johan	>	Member, Science Team
+
+12	Noshin Saiyara		>	Member, Science Team
+
+13	Mehzabien Iqbal		>	Member, Communication Team
