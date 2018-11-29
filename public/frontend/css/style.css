@@ -64,8 +64,7 @@
 }
 #video{
 	position: relative;
-	left: 15%;
-	height: 300px;
+	height: 500px;
 }
 
 .our-works{
@@ -117,21 +116,21 @@
 #inputEmail4{
 	background-color: transparent!important;
 	position: relative;
-	left: 35%;
-	width: 330px;
+	/* left: 35%; */
+	/* width: 330px; */
 }
 
 #inputPassword4{
 	background-color: transparent!important;
 	position: relative;
-	left: 13%;
-	width: 330px;
+	/* left: 13%; */
+	/* width: 330px; */
 }
 
 #exampleFormControlTextarea1{
 	background-color: transparent!important;
-	width: 70%;
-	left: 17%;
+	/* width: 70%; */
+	/* left: 17%; */
 	position: relative;
 }
 
@@ -156,7 +155,7 @@
 }
 
 .contact-us .social-icon{
-	padding: 20px;
+	padding: 1%;
 }
 
 .contact-us .social-icon span{
@@ -172,7 +171,7 @@
 .footer{
 	background-color: #000;
 	color: #fff;
-	height: 60px;
+	height: 100%;
 }
 
 body {
@@ -208,4 +207,16 @@ body {
 
 #hide-button {
 	display: none;
+}
+
+.circle {
+	height: 43px;
+	width: 43px;
+	background-color: #fff;
+	border-radius: 50%;
+}
+
+.white-font {
+	color: #fff;
+	
 }

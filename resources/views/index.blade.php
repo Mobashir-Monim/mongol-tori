@@ -84,16 +84,17 @@
                 <div class="col-md-6">
                     <p id="mongoltori">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                 </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-5">
+                <div class="col-md-5 text-left">
                     <img src="/frontend/img/mars logo.png" class="img-fluid" align="right">
                 </div>
             </div> <!--row -->
             <br><br>
             <div class="row">
-                <div class="col-sm-10">
-                    <iframe id="video" class="embed-responsive embed-responsive-item" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+                <div class="col-md-1"></div>
+                <div class="col-md-10 text-center">
+                    <iframe id="video" class="embed-responsive embed-responsive-item" src="https://www.youtube.com/embed/tgbNymZ7vqY" width="200" height="400"></iframe>
                 </div>
+                <div class="col-md-1"></div>
             </div>
         </div>
     </section> <!-- about-us -->
@@ -199,38 +200,35 @@
             </div>
             <br><br>
             <div class="row">
-                <script>
-                    function showTeam() {
-                        document.getElementById('team-full').style.display = 'block';
-                        document.getElementById('show-team').style.display = 'none';
-                        document.getElementById('hide-button').style.display = 'block';
-                    }
-                </script>
-                <script>
-                    function hideTeam() {
-                        document.getElementById('team-full').style.display = 'none';
-                        document.getElementById('show-team').style.display = 'block';
-                        document.getElementById('hide-button').style.display = 'none';
-                    }
-                </script>
+                @include('templates.team-script')
                 <div class="col-md-12 text-center" id="show-team">
-                    <button onclick="showTeam()" id="teamButton"><strong>View Full Team</strong></button>
+                    <a href="#team-full" onclick="showTeam()" class="btn" id="teamButton"><strong>View Full Team</strong></a>
                 </div>
             </div>
         </div>
 
-        <div class="container-fluid" id="team-full">
-            @for ($i = 0; $i < 10; $i++)
-                <div class="row">
-                    <div class="col-md-12">
-                        here{{$i}}
-                    </div>
+        <div class="container" id="team-full">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3>Team</h3>
+                    <hr>
                 </div>
-            @endfor
+            </div>
+            <div class="row">
+                @foreach (App\TeamMember::all() as $member)
+                    @if ($loop->index != 0 && $loop->index % 3 == 0)
+                        </div>
+                        <br>
+                        <div class="row">
+                    @endif
+                    @include('templates.student')
+                    <br>
+                @endforeach
+            </div>
         </div>
-
+        <br>
         <div class="col-md-12 text-center" id="hide-button">
-            <button onclick="hideTeam()" id="teamButton"><strong>Hide Full Team</strong></button>
+            <a href="#team" onclick="hideTeam()" class="btn" id="teamButton"><strong>Hide Full Team</strong></a>
         </div>
     </section> <!-- team -->
     <br><br>
@@ -270,41 +268,54 @@
                     
             <form>
                 <div class="form-row">
-                    <div class="form-group col">
-                        <input type="email" class="form-control transparent-input" id="inputEmail4" placeholder="Email">
+                    <div class="col-md-1"></div>
+                    <div class="form-group col-md-5">
+                        <input type="email" class="form-control transparent-input" name="email" id="inputEmail4" placeholder="Email">
                     </div>
-                    <div class="form-group col">
-                        <input type="password" class="form-control transparent-input" id="inputPassword4" placeholder="Password">
+                    <div class="form-group col-md-5">
+                        <input type="text" class="form-control transparent-input" name="full_name" id="inputEmail4" placeholder="Full Name">
                     </div>
+                    <div class="col-md-1"></div>
                 </div>
 
-                <div class="form-group">
-                    <textarea class="form-control transparent-input" id="exampleFormControlTextarea1" rows="7" placeholder="Write your message here..."></textarea>
+                <div class="form-row">
+                    <div class="col-md-1"></div>
+                    <div class="form-group col-md-10">
+                        <textarea class="form-control transparent-input" id="exampleFormControlTextarea1" rows="7" placeholder="Write your message here..."></textarea>
+                    </div>
+                    <div class="col-md-1"></div>
                 </div>
 
                 <button type="submit" class="btn btn-primary" id="submitButton" align="center"><strong>Submit</strong></button>
             </form>
-
-            <div class="text-center pt-4">
-                <h4 style="padding-top: 30px; font-size: 20px; color: #fff"><strong>Connect Us With</strong></h4>
-                <span class="social-icon"><i class="fa fab fa-facebook-f x5"></i></span>
-                <span class="social-icon"><i class="fa fab fa-twitter"></i></span>
-                <span class="social-icon"><i class="fa fab fa-linkedin"></i></span>
-                <span class="social-icon"><i class="fa fab fa-google-plus"></i></span>
-            </div>
+            {{-- <br>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h4 class="white-font"><strong>Connect Us With</strong></h4>
+                    <i class="circle fa fab fa-facebook-f"></i>
+                    <i class="circle fa fab fa-twitter">
+                    <i class="circle fa fab fa-linkedin">
+                    <i class="circle fa fab fa-google-plus">
+                </div>
+            </div> --}}
+            <br>
         </div>
     </section> <!--contact us-->
             
     <section class="footer">
         <div class="container">
-            <div class="row" style="padding-top: 20px;">
-                <div class="col-md-8 text-center">
-                    <p>&copy;Copyright BRACU Mongol-Tori 2017-18 | Privacy Policy | Terms of Use</p>
+            <br>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+                    <p>&copy;Copyright BRACU Mongol-Tori 2017-18</p>
                 </div>
-                <div class="col-md-4">
-                    <p>Made with <i class="fa fas fa-heart"></i></p>
+                <div class="col-md-5 text-right">
+                    <p>Made with  &nbsp;<i class="fa fas fa-heart"></i>  &nbsp;by Eveneer</p>
                 </div>
+                <div class="col-md-1"></div>
             </div>
+            <br>
         </div>
     </section>
 
