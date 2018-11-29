@@ -43,6 +43,14 @@ class TeamMembersController extends Controller
         return view('team-members.show', compact('members'));
     }
 
+    public function delete (Request $request, $id)
+    {
+        $member = TeamMember::find($id);
+        $member->delete();
+
+        return redirect('team-members');
+    }
+
     public function edit (Request $request, $id)
     {
         $member = TeamMember::find($id);

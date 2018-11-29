@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Team Memebers Routes
 Route::get('/team-members', 'TeamMembersController@show')->middleware('auth')->name('team-members');
+Route::post('/team-members/delete/{id}', 'TeamMembersController@delete')->middleware('auth')->name('team-members-delete');
 Route::get('/team-members/add', 'TeamMembersController@create')->middleware('auth')->name('team-member-create');
 Route::post('/team-members/add', 'TeamMembersController@store')->middleware('auth')->name('team-member-add');
 Route::get('/team-members/edit/{id}', 'TeamMembersController@edit')->middleware('auth')->name('team-member-edit');
