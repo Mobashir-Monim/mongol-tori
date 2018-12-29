@@ -15,6 +15,7 @@ class CreateWebContentsTable extends Migration
     {
         Schema::create('web_contents', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
             $table->text('content');
             $table->timestamps();
         });

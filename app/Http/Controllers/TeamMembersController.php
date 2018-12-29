@@ -28,7 +28,7 @@ class TeamMembersController extends Controller
         $member->email = $request->email;
         $member->phone = $request->phone;
         $member->department = $request->department;
-        $member->team = $request->team;
+        $member->team_id = $request->team;
         $member->photo = $this->uploadImage($request->photo, 'team-members');
         $member->save();
         
@@ -56,5 +56,28 @@ class TeamMembersController extends Controller
         $member = TeamMember::find($id);
 
         return view('team-members.update', compact('member'));
+    }
+
+    public function update (Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|max:191',
+            'email' => 'required|email|max:191',
+            'phone' => 'required|max:15',
+            'department' => 'required|max:30',
+            'team' => 'required|max:50',
+            'photo' => 'required|image|max:3000',
+        ]);
+
+        $member = TeamMember::find($request->id);
+        $member->name = $request->name;
+        $member->email = $request->email;
+        $member->phone = $request->phone;
+        $member->department = $request->department;
+        $member->team_id = $request->team;
+        $member->photo = $this->uploadImage($request->photo, 'team-members');
+        $member->save();
+
+        return redirect('/team-members')->with('succes', 'Member information edited');
     }
 }

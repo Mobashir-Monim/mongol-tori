@@ -34,3 +34,7 @@ Route::post('/teams/create', 'TeamsController@store')->middleware('auth');
 Route::get('/teams/update/{id}', 'TeamsController@edit')->middleware('auth');
 Route::post('/teams/update', 'TeamsController@update')->middleware('auth');
 Route::get('/teams/delete/{id}', 'TeamsController@delete')->middleware('auth');
+
+//Web Content Routes
+Route::get('/content/edit/{id}', 'WebContentsController@edit')->middleware('auth');
+Route::post('/content/edit', 'WebContentsController@update')->middleware('auth');

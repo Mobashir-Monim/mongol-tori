@@ -59,7 +59,12 @@
                                 <label for="team" class="col-md-4 col-form-label text-md-right">{{ __('Team') }}</label>
     
                                 <div class="col-md-6">
-                                    <input id="team" type="text" class="form-control" name="team" value="{{ old('team') }}" required>
+                                    <select name="team" class="form-control">
+                                        <option value="">Please select a team</option>
+                                        @foreach (App\Team::all() as $team)
+                                            <option value="{{$team->id}}">{{$team->name}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
     

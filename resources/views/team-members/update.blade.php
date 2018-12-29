@@ -10,7 +10,8 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('team-member-update') }}" enctype="multipart/form-data">
                             @csrf
-    
+                            <input type="hidden" name="id" value="{{$member->id}}">
+
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
     
@@ -51,7 +52,7 @@
                                 <label for="department" class="col-md-4 col-form-label text-md-right">{{ __('Department Initial') }}</label>
     
                                 <div class="col-md-6">
-                                    <input id="department" type="text" class="form-control" name="department" value="{{ old('team') == null ? $member->team : old('team') }}" required>
+                                    <input id="department" type="text" class="form-control" name="department" value="{{ old('department') == null ? $member->department : old('department') }}" required>
                                 </div>
                             </div>
 
@@ -59,7 +60,16 @@
                                 <label for="team" class="col-md-4 col-form-label text-md-right">{{ __('Team') }}</label>
     
                                 <div class="col-md-6">
-                                    <input id="team" type="text" class="form-control" name="team" value="{{ old('team') == null ? $member->team : old('team') }}" required>
+                                    <select name="team" class="form-control">
+                                        @if (old('team') == null)
+                                            <option value="{{$member->team_id}}">{{$member->team->name}}</option>
+                                        @else
+                                            <option value="{{old('team')}}">{{App\Team::find(old('team'))->name}}</option>
+                                        @endif
+                                        @foreach (App\Team::all() as $team)
+                                            <option value="{{$team->id}}">{{$team->name}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
 
