@@ -26,3 +26,11 @@ Route::get('/team-members/add', 'TeamMembersController@create')->middleware('aut
 Route::post('/team-members/add', 'TeamMembersController@store')->middleware('auth')->name('team-member-add');
 Route::get('/team-members/edit/{id}', 'TeamMembersController@edit')->middleware('auth')->name('team-member-edit');
 Route::post('/team-members/edit', 'TeamMembersController@update')->middleware('auth')->name('team-member-update');
+
+//Team Routes
+Route::get('/teams', 'TeamsController@adminView')->middleware('auth');
+Route::get('/teams/create', 'TeamsController@create')->middleware('auth');
+Route::post('/teams/create', 'TeamsController@store')->middleware('auth');
+Route::get('/teams/update/{id}', 'TeamsController@edit')->middleware('auth');
+Route::post('/teams/update', 'TeamsController@update')->middleware('auth');
+Route::get('/teams/delete/{id}', 'TeamsController@delete')->middleware('auth');

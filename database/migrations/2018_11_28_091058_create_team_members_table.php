@@ -19,7 +19,7 @@ class CreateTeamMembersTable extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('department');
-            $table->string('team');
+            $table->integer('team_id');
             $table->timestamps();
         });
     }

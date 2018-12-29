@@ -215,14 +215,8 @@
                 </div>
             </div>
             <div class="row">
-                @foreach (App\TeamMember::all() as $member)
-                    @if ($loop->index != 0 && $loop->index % 3 == 0)
-                        </div>
-                        <br>
-                        <div class="row">
-                    @endif
-                    @include('templates.student')
-                    <br>
+                @foreach (App\Team::all() as $team)
+                    <h1>{{$team->name}}</h1>
                 @endforeach
             </div>
         </div>

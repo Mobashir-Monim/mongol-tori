@@ -17,7 +17,7 @@ class TeamMembersTableSeeder extends Seeder
                 'email' => 'emailaddress'.$i.'@domain,com',
                 'phone' => '+8801234567890',
                 'department' => 'CSE',
-                'team' => 'Some team',
+                'team_id' => ($i % 5),
                 'photo' => '/frontend/img/Abdullah.jpg',
             ]);
         }
