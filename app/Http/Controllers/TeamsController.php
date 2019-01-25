@@ -14,6 +14,13 @@ class TeamsController extends Controller
         return view ('teams.admin-view', compact('teams'));
     }
 
+    public function show (Request $request, $id)
+    {
+        $team = Team::find($id);
+
+        return view('teams.show', compact('team'));
+    }
+
     public function create ()
     {
         return view ('teams.create');
@@ -25,12 +32,14 @@ class TeamsController extends Controller
             'name' => 'required',
             'leader' => 'required',
             'description' => 'required',
+            'short_description' => 'required'
         ]);
 
         $team = new Team;
         $team->name = $request->name;
         $team->description = $request->description;
         $team->leader_id = $request->leader;
+        $team->short_description = $request->short_description;
         $team->save();
 
         return redirect ('/teams')->with('success', 'Team successfully created');
@@ -49,12 +58,14 @@ class TeamsController extends Controller
             'name' => 'required',
             'leader' => 'required',
             'description' => 'required',
+            'short_description' => 'required'
         ]);
 
         $team = Team::find($request->id);
         $team->name = $request->name;
         $team->description = $request->description;
         $team->leader_id = $request->leader;
+        $team->short_description = $request->short_description;
         $team->save();
 
         return redirect ('/teams')->with('success', 'Team successfully edited');

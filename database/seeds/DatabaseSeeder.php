@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
             TeamsTableSeeder::class,
             TeamMembersTableSeeder::class,
             UserTableSeeder::class,
-            WebContentTableSeeder::class
+            WebContentTableSeeder::class,
+            AdvisorTableSeeder::class
         ]);
     }
 }

@@ -34,7 +34,29 @@ Route::post('/teams/create', 'TeamsController@store')->middleware('auth');
 Route::get('/teams/update/{id}', 'TeamsController@edit')->middleware('auth');
 Route::post('/teams/update', 'TeamsController@update')->middleware('auth');
 Route::get('/teams/delete/{id}', 'TeamsController@delete')->middleware('auth');
+Route::get('/teams/{id}', 'TeamsController@show');
 
 //Web Content Routes
 Route::get('/content/edit/{id}', 'WebContentsController@edit')->middleware('auth');
 Route::post('/content/edit', 'WebContentsController@update')->middleware('auth');
+
+//Advisor Routes
+Route::get('/advisors', 'AdvisorsController@show')->middleware('auth');
+Route::get('/advisors/create', 'AdvisorsController@create')->middleware('auth');
+Route::post('/advisors/create', 'AdvisorsController@store')->middleware('auth');
+Route::get('/advisors/edit/{id}', 'AdvisorsController@edit')->middleware('auth');
+Route::post('/advisors/edit', 'AdvisorsController@update')->middleware('auth');
+Route::get('/advisors/delete/{id}', 'AdvisorsController@delete')->middleware('auth');
+
+//Sponsor Routes
+Route::get('/sponsors', 'SponsorsController@show')->middleware('auth');
+Route::get('/sponsors/create', 'SponsorsController@create')->middleware('auth');
+Route::post('/sponsors/create', 'SponsorsController@store')->middleware('auth');
+Route::get('/sponsors/edit/{id}', 'SponsorsController@edit')->middleware('auth');
+Route::post('/sponsors/edit', 'SponsorsController@update')->middleware('auth');
+Route::get('/sponsors/delete/{id}', 'SponsorsController@delete')->middleware('auth');
+
+// Test Route
+Route::get('/test', function () {
+    return view('test');
+});

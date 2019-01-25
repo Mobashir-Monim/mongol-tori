@@ -2,39 +2,32 @@
 
 @section('content')
     <div class="container-fluid">
-        <h1 class="text-center">Create a new Team</h1>
-        <br>
-        <form action="/teams/create" method="POST">
+        <form action="/advisors/create" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-12">
-                            <input type="text" name="name" placeholder="Team Name" class="form-control">
+                            <input type="text" name="name" placeholder="Advisor Name" class="form-control">
                         </div>
                     </div>
                     <br>
                     <div class="row">
                         <div class="col-md-12">
-                            <select name="leader" class="form-control">
-                                <option value="">Please select a team leader</option>
-                                @foreach (App\TeamMember::all() as $member)
-                                    <option value="{{$member->id}}">{{$member->name.' - '.$member->department}}</option>
-                                @endforeach
-                            </select>
+                            <input type="text" name="role" placeholder="Advisor Role" class="form-control">
                         </div>
                     </div>
                     <br>
                     <div class="row">
                         <div class="col-md-12">
-                            <textarea name="short_description" class="form-control" cols="30" rows="5">Short description of team</textarea>
+                            <input type="text" name="department" placeholder="Advisor Department" class="form-control">
                         </div>
                     </div>
                     <br>
                     <div class="row">
                         <div class="col-md-12">
-                            <textarea name="description" class="form-control" cols="30" rows="5">Team description</textarea>
+                            <input type="file" name="photo" class="form-control">
                         </div>
                     </div>
                     <br>

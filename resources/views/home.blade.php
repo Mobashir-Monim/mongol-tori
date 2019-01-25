@@ -11,6 +11,8 @@
                     <ul>
                         <li><a href="/team-members">Show Team Members</a></li>
                         <li><a href="/teams">Show Teams</a></li>
+                        <li><a href="/advisors">Show Advisors</a></li>
+                        <li><a href="/sponsors">Show Sponsors</a></li>
                     </ul>
                 </div>
             </div>

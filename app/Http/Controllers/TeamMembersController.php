@@ -66,7 +66,7 @@ class TeamMembersController extends Controller
             'phone' => 'required|max:15',
             'department' => 'required|max:30',
             'team' => 'required|max:50',
-            'photo' => 'required|image|max:3000',
+            'photo' => 'nullable|image|max:3000',
         ]);
 
         $member = TeamMember::find($request->id);
@@ -75,7 +75,11 @@ class TeamMembersController extends Controller
         $member->phone = $request->phone;
         $member->department = $request->department;
         $member->team_id = $request->team;
-        $member->photo = $this->uploadImage($request->photo, 'team-members');
+        
+        if ($request->photo != null) {
+            $member->photo = $this->uploadImage($request->photo, 'team-members');
+        }
+
         $member->save();
 
         return redirect('/team-members')->with('succes', 'Member information edited');

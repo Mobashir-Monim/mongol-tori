@@ -68,9 +68,10 @@
         </nav>
 
         <div class="container-fluid">
+            <br><br>
             <div class="row">
                 <div class="col-md-1"></div>
-                <div class="col-md-10"><p id="spp" style="font-size: 3.5vw;"><strong>SUCCESS.<br>PASSION.<br>PERFORMANCE.</strong></p></div>
+                <div class="col-md-10"><p id="spp" style="font-size: 3.5vw;"><strong>SUCCESS. PASSION. PERFORMANCE.</strong></p></div>
                 <div class="col-md-1"></div>
             </div>
         </div>       
@@ -175,48 +176,32 @@
             
         <div class="container">
             <div class="row text-center">
-                <div class="col-md-4">
-                    <div class="member-1">
-                        <div class="avatar">
-                            <span><img src="/frontend/img/Dr. Md. Khalilur Rhaman.jpg" class="img-fluid" alt="avatar"></span>
-                        </div>
-                            <div class="desc">
-                            <h5 class="text-dark">Dr. Md. Khalilur Rahman</h5>
-                            <h6 class="text-dark">Faculty Adviser</h6>
-                        </div>
-                    </div>  
-                </div>
-
-                <div class="col-md-4">
-                    <div class="member-2">
-                        <div class="avatar">
-                            <span><img src="/frontend/img/Md. Saiful Islam.jpg" class="img-fluid" alt="avatar"></span>
-                        </div>
-                        <div class="desc">
-                            <h5 class="text-dark">Md. Saiful Islam</h5>
-                            <h6 class="text-dark">Faculty Adviser</h6>
-                        </div>
-                    </div>  
-                </div>
-
-                <div class="col-md-4">
-                    <div class="member-3">
-                        <div class="avatar">
-                            <span><img src="/frontend/img/Abdullah.jpg" class="img-fluid" alt="avatar"></span>
-                        </div>
-                        <div class="desc">
-                            <h5 class="text-dark">Abdullah</h5>
-                            <h6 class="text-dark">Faculty Adviser</h6>
-                        </div>
+                <div class="col"></div>
+                @foreach (App\Advisor::all() as $advisor)
+                    <div class="col-md-3">
+                        <img src="{{$advisor->photo}}" class="img-fluid w-100" alt="avatar">
+                        <h5 class="text-center">{{$advisor->name}}</h5>
+                        <h6 class="text-center">{{$advisor->role}}</h6>
                     </div>
-                </div>        
+                    <div class="col"></div>
+
+                    @if ($loop->iteration % 3 == 0)
+                        </div>
+                    </div>  
+                        </div>
+                        <div class="row text-center">
+                            <div class="col"></div>
+                    @endif
+                @endforeach     
             </div>
             <br><br>
             <div class="row">
                 @include('templates.team-script')
-                <div class="col-md-12 text-center" id="show-team">
-                    <a href="#team-full" onclick="showTeam()" class="btn" id="teamButton"><strong>View Full Team</strong></a>
+                <div class="col-md"></div>
+                <div class="col-md-3 text-center" id="show-team">
+                    <a href="#team-full" onclick="showTeam()" class="btn btn-warning pt-2 w-100" id="teamButton"><strong>View All Team</strong></a>
                 </div>
+                <div class="col-md"></div>
             </div>
         </div>
 
@@ -227,15 +212,33 @@
                     <hr>
                 </div>
             </div>
-            <div class="row">
-                @foreach (App\Team::all() as $team)
-                    <h1>{{$team->name}}</h1>
-                @endforeach
-            </div>
+            @foreach (App\Team::all() as $team)
+                <div class="row mb-5">
+                    <div class="col-md-8 team-info-bg p-5">
+                        <h3 class="mb-3">{{ $team->name }}</h3>
+                        <p class="mb-3">{{ 'Team Members: '.count($team->members) }}</p>
+                        <p class="mb-3">{{$team->short_description}}</p>
+                        <a href="/teams/{{$team->id}}" onclick="hideTeam()" class="btn btn-warning pt-2 col-md-4 mt-3" id="teamButton"><strong>View Team</strong></a>
+                    </div>
+                    <div class="col-md-4 lead-info-container pl-0">
+                        <img src="{{$team->leader->photo}}" class="img-fluid w-100 leader-image">
+                        <div class="leader-info pt-4">
+                            <strong class="leader-name ">{{$team->leader->name}}</strong>
+                            <p>{{$team->name.' lead'}}</p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
         </div>
         <br>
-        <div class="col-md-12 text-center" id="hide-button">
-            <a href="#team" onclick="hideTeam()" class="btn" id="teamButton"><strong>Hide Full Team</strong></a>
+        <div class="container" id="hide-button">
+            <div class="row">
+                <div class="col-md"></div>
+                <div class="col-md-3" >
+                    <a href="#team" onclick="hideTeam()" class="btn btn-warning pt-2 w-100" id="teamButton"><strong>Hide All Team</strong></a>
+                </div>
+                <div class="col-md"></div>
+            </div>
         </div>
     </section> <!-- team -->
     <br><br>
@@ -254,22 +257,16 @@
             </div>
 
             <div class="row ">  
-                <div class="col-md-12 text-center">
-                    <img src="/frontend/img/bracbank.jpg" class="sponsors img-fluid">
-                    <img src="/frontend/img/square.png" class="sponsors img-fluid">
-                    <img src="/frontend/img/grameenintel.jpg" class="sponsors img-fluid">
-                    <img src="/frontend/img/prothomalo.png" class="sponsors img-fluid">
-                    <img src="/frontend/img/cytron.png" class="sponsors img-fluid">
-                    <img src="/frontend/img/eximbank.png" class="sponsors img-fluid">
-                    <img src="/frontend/img/fsib.jpg" class="sponsors img-fluid">
-                    <img src="/frontend/img/robu.png" class="sponsors img-fluid">
-                    <img src="/frontend/img/naster.png" class="sponsors img-fluid">
+                <div class="col-md-12 text-center mt-3">
+                    @foreach (App\Sponsor::all() as $sponsor)
+                        <img src="{{ $sponsor->logo }}" class="sponsors img-fluid" alt="{{ $sponsor->name }}">
+                    @endforeach
                 </div>
             </div>
         </div>
     </section> <!-- sponsor -->
             
-    <section class="contact-us">
+    <section class="contact-us" id="contact">
         <div class="container">
             <h1 style="color: #fff; padding-top: 35px;" align="center">Contact Us</h1>
                     

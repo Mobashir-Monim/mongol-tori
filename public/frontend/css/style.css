@@ -88,11 +88,9 @@
 #teamButton{
 	background-color: #fc3;
 	color: #fff;
-	position: relative;
-	width: 320px;
-	height: 50px;
+	text-align: center;
+	height: 6.5vh;
 }
-
 
 .sponsors {
 	position: relative;
@@ -224,4 +222,27 @@ body {
 .avatar {
 	max-width: 300px;
 	max-height: 300px;
+}
+
+.leader-info {
+	background-color: #FE0000;
+	height: 15vh;
+	margin-top: -15vh;
+	text-align: center;
+	z-index: 1000;
+	color: #FFFFFF;
+}
+
+.leader-name {
+	font-size: 1.3em;
+}
+
+.leader-image {
+	z-index: -1000 !important;
+	position: relative;
+}
+
+.team-info-bg {
+	background-color: #150A1A;
+	color: #ffffff;
 }

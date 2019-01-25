@@ -33,6 +33,12 @@
                     <br>
                     <div class="row">
                         <div class="col-md-12">
+                            <textarea name="short_description" class="form-control" cols="30" rows="5">{{ old('short_description') == null ? $team->short_description : old('short_description') }}</textarea>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
                             <textarea name="description" class="form-control" cols="30" rows="5">{{ old('description') == null ? $team->description : old('description') }}</textarea>
                         </div>
                     </div>
